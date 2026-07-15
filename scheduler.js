@@ -59,6 +59,8 @@ const firedThisMinute = new Set();
 
 async function tick() {
   const { iso, hhmm, dateOnly } = nowParts();
+
+  console.log ("Scheduler Check:", iso, hhmm);
   const minuteKey = iso.slice(0, 16); // YYYY-MM-DDTHH:MM
 
   // 1) One-off posts whose scheduled_time has arrived and are still pending

@@ -75,6 +75,9 @@ async function tick() {
      WHERE status = 'pending' AND recurrence = 'daily' AND daily_time = ?`
   ).all(hhmm);
 
+  console.log("Current scheduler time:",hhmm);
+  console.;og("Daily posts found:",dueDaily);
+
   const toRun = [...duePosts, ...dueDaily].filter(p => {
     const fireKey = `${p.id}:${minuteKey}`;
     if (firedThisMinute.has(fireKey)) return false;

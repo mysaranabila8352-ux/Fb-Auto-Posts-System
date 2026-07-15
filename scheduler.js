@@ -76,7 +76,7 @@ async function tick() {
   ).all(hhmm);
 
   console.log("Current scheduler time:",hhmm);
-  console.;og("Daily posts found:",dueDaily);
+  console.log("Daily posts found:",dueDaily);
 
   const toRun = [...duePosts, ...dueDaily].filter(p => {
     const fireKey = `${p.id}:${minuteKey}`;
